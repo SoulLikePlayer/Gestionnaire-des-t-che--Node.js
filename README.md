@@ -17,24 +17,15 @@ Ce projet est un simple gestionnaire de tâches qui permet aux utilisateurs d'aj
 
 1. Clonez ce repository sur votre machine locale :
 
-git clone https://github.com/votre-utilisateur/gestionnaire-taches.git
-
-markdown
-
+  git clone https://github.com/votre-utilisateur/gestionnaire-taches.git
 
 2. Installez les dépendances nécessaires :
 
-npm install
-
-markdown
-
+  npm install
 
 3. Lancez l'application :
 
-node server.js
-
-bash
-
+  node server.js
 
 4. Ouvrez votre navigateur et accédez à `http://localhost:3000`.
 
