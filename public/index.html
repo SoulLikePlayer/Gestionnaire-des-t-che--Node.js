@@ -10,13 +10,15 @@
     <div class="container">
         <h1>Gestionnaire de Tâches</h1>
         <form id="task-form">
-            <input type="text" id="task" placeholder="Ajouter une tâche...">
-            <input type="date" id="start-date" required>
+            <input type="text" id="task" placeholder="Ajouter une tâche..." required>
+            <br>
+            <input type="date" id="start-date" text="Date début" required>
+            <br>
+            <label for="end-date">Date de fin :</label>
             <input type="date" id="end-date" required>
+            <br>
             <button type="submit">Ajouter</button>
         </form>
-        
-        
         <ul id="task-list"></ul>
     </div>
     <script src="script.js"></script>

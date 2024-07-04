@@ -7,15 +7,15 @@ const taskList = document.getElementById('task-list');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const taskText = taskInput.value.trim();
-    const startDate = formatDate(startDateInput.value);
-    const endDate = formatDate(endDateInput.value);
+    const startDate = new Date(startDateInput.value);
+    const endDate = new Date(endDateInput.value);
 
-    if (taskText !== '' && startDate && endDate && isEndDateValid(startDate, endDate)) {
+    if (taskText !== '' && startDate && endDate && endDate > startDate) {
         const taskItem = document.createElement('li');
         taskItem.innerHTML = `
-            <strong>Tâche:</strong> ${taskText}<br>
-            <strong>Date de début:</strong> ${startDate}<br>
-            <strong>Date de fin:</strong> ${endDate}
+            <strong>Tâche :</strong> ${taskText}<br>
+            <strong>Date de début :</strong> ${formatDate(startDate)}<br>
+            <strong>Date de fin :</strong> ${formatDate(endDate)}
         `;
         taskList.appendChild(taskItem);
         clearFormInputs();
@@ -24,16 +24,9 @@ form.addEventListener('submit', function(event) {
     }
 });
 
-function formatDate(dateString) {
+function formatDate(date) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const date = new Date(dateString);
     return date.toLocaleDateString('fr-FR', options);
-}
-
-function isEndDateValid(startDate, endDate) {
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    return end >= start;
 }
 
 function clearFormInputs() {
