@@ -11,8 +11,11 @@
         <h1>Gestionnaire de Tâches</h1>
         <form id="task-form">
             <input type="text" id="task" placeholder="Ajouter une tâche...">
+            <input type="date" id="start-date" required>
+            <input type="date" id="end-date" required>
             <button type="submit">Ajouter</button>
         </form>
+        
         <ul id="task-list"></ul>
     </div>
     <script src="script.js"></script>
